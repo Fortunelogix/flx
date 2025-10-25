@@ -1,0 +1,1 @@
+   scp /Users/a1466/Downloads/site.zip <your-codespace-username>@<your-codespace-ip>:~/my-website/
