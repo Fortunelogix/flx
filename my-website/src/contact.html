@@ -53,7 +53,8 @@
 	<link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
         <style id="footerBefore">
             .footerBefore:before {
-                
+                content: '';
+                display: block;
             }
         </style>
 
@@ -78,7 +79,7 @@
                             
                 
                                         <span id="logoTextWrap" style="">
-                        <span class="websiteLogoName" style="color:#;font-family:Roboto;font-size:25px">fortune logix inc</span>
+                        <span class="websiteLogoName" style="color:#072b36;font-family:Roboto;font-size:25px">fortune logix inc</span>
                         <span class="websiteLogoSlogan" style="color:#fff;font-family:Roboto;font-size:10px"></span>
                     </span>
                         </a>
@@ -93,46 +94,16 @@
     </button>
 </div>            
                                         
-<div class="navWidget navbar-collapse collapse
-        
-    ">
-    <ul class="parent-nav-ul nav navbar-nav navbar-right cl-effect-3"><li class="dropdown">
-                        <a href="home.html" pageslug="home" linktype="Page" class="siteNavLink">
-                            HOME
-                                                    </a>
-                                            </li>
-                                                          
-          
-                                                <li class="dropdown">
-                        <a href="about.html" pageslug="about" linktype="Page" class="siteNavLink">
-                            ABOUT
-                                                    </a>
-                                            </li>
-                                                          
-          
-                                                <li class="dropdown">
-                        <a href="services.html" pageslug="services" linktype="Page" class="siteNavLink">
-                            SERVICES
-                                                    </a>
-                                            </li>
-                                                          
-          
-                                                <li class="dropdown">
-                        <a href="gallery.html" pageslug="gallery" linktype="Page" class="siteNavLink">
-                            GALLERY
-                                                    </a>
-                                            </li>
-                                                          
-          
-                                                <li class="dropdown">
-                        <a href="contact.html" pageslug="contact" linktype="Page" class="siteNavLink">
-                            CONTACT
-                                                    </a>
-                                            </li>
-                                    
-                                                                    
-                
-                                                                                                                                                                                            </ul></div>            
+<div class="navWidget navbar-collapse collapse">
+  <style>
+    .navWidget.navbar-collapse.collapse {
+      display: none;
+    }
+    .navWidget.navbar-collapse.collapse.in {
+      display: block;
+    }
+  </style>
+</div>            
     
 </div>
             
@@ -165,39 +136,33 @@
                                     <div class="item ">
                                     <div class="default-form block-form half-col-input ">
                                     <div class="richTextWidget block-title ">
-     <h6>Send us a Message</h6><p>Reach out today to discuss your AI needs. Our NY-based team delivers tailored strategies, rapid prototyping, and reliable deployment to accelerate your business outcomes worldwide.</p></div>            
+     <h6>Send us a Message</h6><p>Reach out today to discuss your AI needs. Our NJ-based team delivers tailored strategies, rapid prototyping, and reliable deployment to accelerate your business outcomes worldwide.</p></div>            
                                 <div class="richTextWidget  ">
      <p style="text-align:center;    font-weight: 700;"><span style="color:black;margin: 0px 15px;" class="fa">&#61463;</span><a style="color:black;text-decoration: none;   ">Regular Timings :  9:00 a.m to 11:00 p.m</a></p></div>            
                                 <div class="richTextWidget  ">
-     <p style="text-align:center;    font-weight: 700;"><span style="margin: 0px 15px;" class="fa">&#61505;</span><a href="#">123 Innovation Way, New York, NY 10001, USA</a></p></div>            
+     <p style="text-align:center;    font-weight: 700;"><span style="margin: 0px 15px;" class="fa">&#61505;</span><a href="#">Suite 201A, Kirlampudi layout, visakhapatnam, India </a></p></div>            
                                 <div class="ContactFormWidget  ">
-    
-
-                                                                                            
-
-
-    
-        <form method="post" action="">
-            <div class="alert alert-success" style="display: none;" id="email_sent">
-                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                <strong>Success!</strong> Your email has been sent successfully.
-            </div>
-            <div class="input">
-
-                <label id="labelforname" class="">Your name:</label>
-                <input type="text" name="name" required placeholder="&#61447; Name"></div>
-            <div class="input">
-                <label id="labelforemail" class="">Your email:</label>
-                <input type="email" name="email" required placeholder="&#61664; Email "></div>
-            <label id="labelformessage" class="">Message:</label>
-            <textarea rows="6" name="message" required placeholder="&#61504; Message"></textarea><div></div>
-                                                                                                        <button id="textforsubmitbtn" type="button" class="button theme-button" value="Submit">Submit
-            </button>
-
-            <input type="hidden" name="website_source" value="innove.ai"></form>
-
-    
-
+    <form id="contactForm" onsubmit="return sendEmail(event)">
+        <div class="alert alert-success" style="display: none;" id="email_sent">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            <strong>Success!</strong> Your message has been sent successfully.
+        </div>
+        <div class="alert alert-danger" style="display: none;" id="email_error">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            <strong>Error!</strong> Please try again later.
+        </div>
+        <div class="input">
+            <label id="labelforname">Your name:</label>
+            <input type="text" name="name" id="name" required placeholder="&#61447; Name">
+        </div>
+        <div class="input">
+            <label id="labelforemail">Your email:</label>
+            <input type="email" name="email" id="email" required placeholder="&#61664; Email">
+        </div>
+        <label id="labelformessage">Message:</label>
+        <textarea rows="6" name="message" id="message" required placeholder="&#61504; Message"></textarea>
+        <button type="submit" class="button theme-button">Submit</button>
+    </form>
 </div>
 
 
@@ -217,7 +182,6 @@
     
 </div>
             
-    
 </section></div>
 <footer class="footerBefore wb-footer  wb-footer theme-dark-color-11  " style="background: url(//images.unsplash.com/photo-1505236858219-8359eb29e329?ixlib=rb-1.2.1&amp;amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;amp;auto=format&amp;amp;fit=crop&amp;amp;w=1430&amp;amp;q=80) fixed no-repeat center center;position: relative; background-size: cover;margin-top:0px"><div class="container boxWidget">
                                     <div class="footer-content ">
@@ -349,6 +313,57 @@ $('.dropdown').find('a').each(function() {
 
 </script>
 <script custom-script-id="website_global" src="//static.sitemantic.com/webbuilder/js/website_global.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script>
+    (function() {
+        // Replace YOUR_PUBLIC_KEY with the actual key from EmailJS dashboard
+        emailjs.init("B3d8SguGtkILQg8gZ");
+    })();
+
+    function sendEmail(event) {
+        event.preventDefault();
+        
+        // Show loading state
+        const submitButton = event.target.querySelector('button[type="submit"]');
+        const originalText = submitButton.innerHTML;
+        submitButton.innerHTML = 'Sending...';
+        submitButton.disabled = true;
+
+        // Clear previous alerts
+        document.getElementById('email_sent').style.display = 'none';
+        document.getElementById('email_error').style.display = 'none';
+
+        // Get form data
+        const templateParams = {
+            from_name: document.getElementById('name').value,
+            from_email: document.getElementById('email').value,
+            message: document.getElementById('message').value,
+            to_email: 'madhulogix@gmail.com'
+        };
+
+        // Send email using EmailJS
+        emailjs.send(
+            'service_ixgsqnk',  // Replace with your Service ID
+            'template_vxflkjf', // Replace with your Template ID
+            templateParams
+        )
+        .then(function() {
+            document.getElementById('email_sent').style.display = 'block';
+            event.target.reset();
+        })
+        .catch(function(error) {
+            console.error('EmailJS Error:', error);
+            document.getElementById('email_error').style.display = 'block';
+        })
+        .finally(function() {
+            // Reset button state
+            submitButton.innerHTML = originalText;
+            submitButton.disabled = false;
+        });
+
+        return false;
+    }
+</script>
 
 </body>
 </html>
